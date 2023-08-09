@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../js/jquery-3.6.0.js">
+  <link rel='stylesheet' href="./css/nhapp.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+</head>
+
+<body>
+    
+
+    <script type="text/javascript" src="../asset/ckeditor/ckeditor.js"></script>
+
+    <!-- <div class="header">
+        <p>admin</p>
+        <a class='nav-link' href="?login=dangxuat">Đăng xuất</a>
+    </div> -->
+
+
+   
+
+    <div class="ad-container">
+        <div class="ad-nav">
+            <h2>Quản lý</h2>
+
+            <ul>
+                <li class="focus">
+                    <a href="./sach.php">Sách</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./theloai.php">Thể loại</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./tacgia.php">Tác giả</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./NXB.php">NXB</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./themuon.php">Thẻ mượn</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./docgia.php">Hội viên</a>
+                </li>
+                <li class="ad-li">
+                    <a href="./docgia.php">Tin tức</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="wrapper border box">
+                <div class="giam" >-</div>
+
+                <input type="number"  id="1" name="soluong" value="1" class="haha form-control" style="background-color: var(--mint-color) !important; text-align:center;">
+                <div class="tang" >+</div>
+            </div>
+            <div class="wrapper border box">
+                <div class="giam" >-</div>
+
+                <input type="number"  id="2" name="soluong" value="1" class="haha form-control" style="background-color: var(--mint-color) !important; text-align:center;">
+                <div class="tang" >+</div>
+            </div>
+            <div class="wrapper border box">
+                <div class="giam" >-</div>
+
+                <input type="number"  id="3" name="soluong" value="1" class="haha form-control" style="background-color: var(--mint-color) !important; text-align:center;">
+                <div class="tang" >+</div>
+            </div>
+            <div class="wrapper border box">
+                <div class="giam" >-</div>
+
+                <input type="number"  id="4" name="soluong" value="1" class="haha form-control" style="background-color: var(--mint-color) !important; text-align:center;">
+                <div class="tang" >+</div>
+            </div>
+        </div>
+    </div>
+
+
+
+      
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+
+var tang = document.getElementsByClassName('tang');
+    var giam = document.getElementsByClassName('giam');
+    // console.log(tang);
+    // console.log(giam);
+
+    for (var i = 0; i < tang.length; i++) {
+        var button = tang[i];
+        button.addEventListener('click',function(event){
+            var buttonClicked = event.target;
+            // console.log(buttonClicked);
+            var input = buttonClicked.parentElement.children[1];
+            console.log(input);
+            var inputValue = input.value;
+            // console.log(inputValue);
+
+        })   
+    }
+
+
+    $(document).ready(function(){
+        $(".mul-select").select2({
+                // placeholder: "Chọn sách", //placeholder
+                tags: true,
+                tokenSeparators: ['/',',',','," "]
+            });
+       
+            $(".single-select").select2({
+                maximumSelectionLength: 1
+            });
+        })
+
+        document.getElementById("sua").addEventListener("click", myFunction);
+        var menu1 = document.getElementById('menu1');
+        var menu2 = document.getElementById('menu2');
+        var quanly = document.getElementById('quanly');
+        var danhsach = document.getElementById('danhsach');
+
+        function myFunction() {
+            menu2.classList.add('active');
+            menu2.classList.remove('fade');
+            menu1.classList.remove('active');
+            // menu1.classList.add('fade');
+            danhsach.classList.remove('active');
+            quanly.classList.toggle('active');
+        }
+        
+        // var elements = document.getElementsByClassName("haha");
+    //     for (var i = 1; i <= elements.length; i++) {
+    //         // var divId = elements[i].id;
+    //         console.log(i);
+    //         let max = document.getElementById("max").innerText;
+    //         let amountElement = document.getElementById(i)
+    //         console.log(amountElement);
+
+    //         let amount = amountElement.value
+    //         console.log(amount);
+
+    //         let render = (amount) => {
+    //             amountElement.value = amount
+    //         }
+    //         let handlePlus = () => {
+    //             if(amount < max)
+    //                 amount++
+    //                 render(amount);
+    //         }
+    //         let handleMinus = () => {
+    //             if(amount > 1)
+    //                 amount--
+    //                 render(amount);
+    //         }
+    //         amountElement.addEventListener('input', () => {
+    //             amount = amountElement.value;
+    //             if(amount<1)
+    //                 amount = 1;
+    //                 render(amount);
+    //         })
+            
+    //     }
+
+   
+        CKEDITOR.replace('noidung')
+
+    </script>
+
+<style>
+    .tang, .giam{
+    min-width: 36px;
+    text-align:center;
+    cursor: pointer;
+}
+.box{
+    width: 200px;
+}
+</style>
+
+</body>
+</html>
